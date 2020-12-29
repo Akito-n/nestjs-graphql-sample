@@ -1,13 +1,13 @@
-import { Query } from "@nestjs/common";
-import { Args, Parent, ResolveField, Int } from "@nestjs/graphql";
-import { Resolver } from "dns";
+import { Args, Parent, ResolveField, Int, Resolver, Query} from "@nestjs/graphql";
 import { Author } from "./author.model";
-
+import { Post } from '../../posts/models/post.model'
+import { AuthorService } from "../autor.service";
+import { PostService } from "src/posts/models/post.service";
 @Resolver(of => Author)
 export class AuthorResolver {
   constructor(
     private authorService:  AuthorService,
-    private postsService: PostsService,
+    private postsService: PostService,
   ){}
 
   @Query(returns => Author, { name: 'author' })
