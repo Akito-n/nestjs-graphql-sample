@@ -9,3 +9,4 @@ import { AuthorResolver } from "./models/authors.resolvers";
 )
 
 export class AuthorModule {}
+
